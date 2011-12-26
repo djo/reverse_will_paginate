@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
   def index
-    @cities = City.order('created_at DESC')
+    @cities = City.order('created_at DESC').page(params[:page]).per_page(20)
   end
 
   def create
@@ -13,7 +13,7 @@ class CitiesController < ApplicationController
       flash[:alert] = @city.errors.full_messages.join(". ")
     end
 
-    redirect_to root_url
+    redirect_to cities_url
   end
 
 end
