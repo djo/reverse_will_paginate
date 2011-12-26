@@ -1,0 +1,12 @@
+<%= form_for City.new do |f| %>
+  <%= f.text_field :name, :placeholder => "New City" %>
+  <%= f.submit 'Add' %>
+<% end %>
+
+<h2> Cities </h2>
+
+<ul>
+  <% @cities.each do |city| %>
+    <li><%= city.name %></li>
+  <% end %>
+</ul>

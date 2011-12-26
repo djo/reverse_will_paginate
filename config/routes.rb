@@ -1,4 +1,9 @@
 ReverseWillPaginate::Application.routes.draw do
+
+  root :to => 'cities#index'
+  resources :cities, :only => [:index, :create]
+  match 'page/:page' => 'cities#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
