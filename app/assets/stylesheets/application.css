@@ -8,10 +8,6 @@ a {
   color: #0000FF;
 }
 
-h2 {
-  font-family: Arial;
-}
-
 #wrapper {
   width: 75%;
   margin: 0 auto;
@@ -48,6 +44,12 @@ footer {
   border: solid 1px #C66;
 }
 
-#page_entries_info {
-  color: #777;
+h2 {
+  font-family: Arial;
+  margin-bottom: 0.2em;
+}
+
+#cities_info {
+  color: #999;
+  font-size: 1em;
 }
