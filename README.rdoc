@@ -1,4 +1,5 @@
-= An example of the reverse pagination with {will_paginate}[https://github.com/mislav/will_paginate]
+== An example of the reverse pagination with {will_paginate}[https://github.com/mislav/will_paginate]
+{<img src="https://secure.travis-ci.org/Djo/reverse_will_paginate.png" />}[http://travis-ci.org/Djo/reverse_will_paginate]
 
 The example shows how to implement pagination if you need unchanged pages with descending order.
 To keep immutable content in the pages can be by SEO reasons for example. See {demo}[http://reverse-will-paginate.heroku.com/].
