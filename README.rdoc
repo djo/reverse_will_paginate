@@ -1,27 +1,27 @@
-= An example of the reverse pagination with {will_paginate}[https://github.com/mislav/will_paginate]
+= An example of the reverse pagination
 {<img src="https://secure.travis-ci.org/Djo/reverse_will_paginate.png" />}[http://travis-ci.org/Djo/reverse_will_paginate]
 
-The example shows how to implement pagination if you need unchanged pages with descending order.
+The example shows how to implement pagination with {will_paginate}[https://github.com/mislav/will_paginate] if you need unchanged pages with descending order.
 To keep immutable content in the pages can be by SEO reasons for example. See {demo}[http://reverse-will-paginate.heroku.com/].
 
-== How the pages will look
+== How it looks
 
 For example you should display 3 posts per page in the descending order. And you want to keep unchanged pages for google and friends for indexing.
 In this case you can have the start page (the last page of the records in the your db) with dynamic limit:
 
-9 Posts will provide the next three pages:
+9 Posts will consist of 3 pages:
 
   9..7, 6..4, 3..1
 
-10 Posts will provide the next three pages:
+10 Posts will consist of 3 pages:
 
   10..7, 6..4, 3..1
 
-11 Posts will provide the next three pages:
+11 Posts will consist of 3 pages:
 
   11..7, 6..4, 3..1
 
-And 10 Posts will provide the next four pages:
+And 12 Posts will consist of 4 pages:
 
   12..10, 9..7, 6..4, 3..1
 
