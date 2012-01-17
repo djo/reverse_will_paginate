@@ -4,12 +4,7 @@ describe CitiesController do
 
   before do
     City.stub(:per_page).and_return(2)
-
-    @city1 = create_city "First"
-    @city2 = create_city "Second"
-    @city3 = create_city "Third"
-    @city4 = create_city "Fourth"
-    @city5 = create_city "Fifth"
+    @city1, @city2, @city3, @city4, @city5 = (1..5).map { |i| create_city "#{i}th city" }
   end
 
   describe "#index" do
@@ -36,7 +31,7 @@ describe CitiesController do
     end
 
     it "prepares the start page with the two last cities in completed pages case" do
-      city6 = create_city "Sixth"
+      city6 = create_city "6th city"
       get :index
       assigns(:cities).should eq([city6, @city5])
     end

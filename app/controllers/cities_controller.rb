@@ -29,17 +29,17 @@ class CitiesController < ApplicationController
     per_page = City.per_page
     total_count = scope.count
     rest_count = total_count > per_page ? (total_count % per_page) : 0
-    page_count = total_count > per_page ? (total_count / per_page) : 1
-    current_page = params[:page].blank? ? page_count : params[:page].to_i
+    num_pages = total_count > per_page ? (total_count / per_page) : 1
+    current_page = params[:page].blank? ? num_pages : params[:page].to_i
 
     # Paginate by completed pages
     opts = { :page => current_page, :per_page => per_page, :total_entries => (total_count - rest_count) }
     scope = scope.order("created_at ASC").paginate(opts)
 
     # Increase limit for the strat page to include rest entities
-    if current_page == page_count
+    if current_page == num_pages
       new_limit = (total_count % per_page) + per_page
-      new_offset = (page_count - 1) * per_page
+      new_offset = (num_pages - 1) * per_page
       scope = scope.limit(new_limit).offset(new_offset)
     end
 
