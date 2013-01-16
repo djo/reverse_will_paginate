@@ -48,5 +48,4 @@ class CitiesController < ApplicationController
     collection.instance_variable_set(:"@per_page", per_page)
     collection
   end
-
 end
