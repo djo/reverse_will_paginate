@@ -1,7 +1,7 @@
 # Example of the reverse pagination
 [![Build Status](https://secure.travis-ci.org/Djo/reverse_will_paginate.png "Build Status")](http://travis-ci.org/Djo/reverse_will_paginate)
 
-Many sites with pagination have a SEO problem. As you add new content to the site, more pages are created and the older content moves from page 1 to page 2 and so on. This produces issues related to things like page indexing and UX. This example shows you how to implement reverse pagination with [will_paginate](https://github.com/mislav/will_paginate) and float limit for the first (index) page. See [demo](http://reverse-will-paginate.heroku.com).
+With the standard pagination strategy on adding a new content you will have situation when the older content moves from page #1 to page #2 and so on. It leads to issues with SEO, indexing and UX. This example shows you how to implement reverse pagination with [will_paginate](https://github.com/mislav/will_paginate) and floating limit for the first (index) page to avoid such issues.
 
 ## How it looks
 
@@ -34,11 +34,8 @@ And posts will produce 4 pages with 3 posts on the index:
 
 ## How it works
 
-To get this behaviour you need to implement the float limit for the first page.
+To get this behaviour you need to implement the floating limit for the first page.
 
 I didn't find better solution with will_paginate than to convert a given relation to collection to set the right limit for the start page.<br />See [specs](https://github.com/Djo/reverse_will_paginate/tree/master/spec/controllers/cities_controller_spec.rb).
 
-## Links
-
-* [Demo](http://reverse-will-paginate.heroku.com)
-* [Example of the reverse pagination with kaminari](https://github.com/Djo/reverse_kaminari)
+Also look at [https://github.com/Djo/reverse_kaminari](https://github.com/Djo/reverse_kaminari).
